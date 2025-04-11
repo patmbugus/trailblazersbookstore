@@ -11,3 +11,11 @@ published_year VARCHAR(50),
 unit_price DECIMAL(10,2),
 stock_quantity INT
 );
+
+
+-- Creating Book Author
+CREATE TABLE Book_Author (
+book_author_id INT PRIMARY KEY AUTO_INCREMENT,
+book_id INT,
+author_id INT
+);
