@@ -1,3 +1,4 @@
 THE ERD. Open to changes
 
-![image](https://github.com/user-attachments/assets/78796063-f731-43ad-9f3c-bcf71988a826)
+![image](https://github.com/user-attachments/assets/227caacf-bbd4-4753-a30b-e445f91d3c05)
+
