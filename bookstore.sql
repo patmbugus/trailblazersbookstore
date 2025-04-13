@@ -151,4 +151,3 @@ shipping_cost DECIMAL(10,2)
 
 
 
-
