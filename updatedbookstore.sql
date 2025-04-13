@@ -1,5 +1,6 @@
 -- Creating of BookStore Database
-CREATE DATABASE BookStore;
+-- CREATE DATABASE BookStore;
+USE BookStore;
 
 -- Creating Book Author Table
 CREATE TABLE Book_Author (
@@ -26,7 +27,7 @@ contactEmail VARCHAR(50)
 
 -- Creating Book Table
 CREATE TABLE Book (
-book_id INT PRIMARY KEY, 
+book_id INT PRIMARY KEY AUTO_INCREMENT, 
 title VARCHAR(50),
 publisher_id INT, 
 language_id INT,
@@ -34,7 +35,6 @@ published_year VARCHAR(50),
 unit_price DECIMAL(10,2),
 stock_quantity INT,
 Genre VARCHAR(50),
-FOREIGN KEY (book_id) REFERENCES Book_Author(book_id),
 FOREIGN KEY (language_id) REFERENCES Book_Language(language_id),
 FOREIGN KEY (publisher_id) REFERENCES Publisher(publisher_id)
 );
@@ -124,6 +124,18 @@ changed_at DATETIME DEFAULT CURRENT_TIMESTAMP,
 updated_by VARCHAR(50),
 notes VARCHAR(50)
 );
+
+-- To auto-calculate line-total
+DELIMITER $$
+
+CREATE TRIGGER before_insert_order_line
+BEFORE INSERT ON Order_Line
+FOR EACH ROW
+BEGIN
+  SET NEW.line_total = NEW.quantity * NEW.unit_price;
+END$$
+
+DELIMITER ;
 
 
 -- Creating Order Line Table
