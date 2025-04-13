@@ -14,6 +14,11 @@
 - Stored data into the DB and making it easy to retrieve and analyse the data from the DB.
 - Checked if the queries could run in order to retrieve and analyse the data.
 
+# Group Members.
+- Patricia Mwangi
+- Catherine Abugah 
+- Evan Omanga
+
 # THE ERD. 
 
 
